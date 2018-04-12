@@ -28,7 +28,7 @@ main > section {
   }
 
   @include media(">hd") {
-    max-width:                1280px;
+    max-width:                  1280px;
   }
 }
 
@@ -56,5 +56,18 @@ main > section {
 
   @include media(">desktop") {
     @include grid-col(12, 26);
+  }
+}
+
+// Resources
+.resources {
+  ul {
+    @include grid-row;
+  }
+
+  li {
+    @include media(">desktop") {
+      @include grid-col(13, 26);
+    }
   }
 }
