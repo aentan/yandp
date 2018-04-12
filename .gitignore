@@ -6,6 +6,7 @@ node_modules/
 public/
 
 data/**/hash.json
+data/*/hash.json
 static/css/*
 static/img/*
 static/js/*
