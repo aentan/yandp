@@ -19,7 +19,7 @@ gulp.task("scss", function () {
     del(["static/css/**/*"])
 
     //compile hashed css files
-    gulp.src(["static/vendor/css/**/*", "static/src/scss/main.scss"])
+    gulp.src(["static/vendor/css/**/*", "static-src/scss/main.scss"])
         .pipe(sass({
             outputStyle : "compressed"
         }))
@@ -39,7 +39,7 @@ gulp.task("scss", function () {
 
 gulp.task("img", function () {
 
-    gulp.src("static/src/img/**/*")
+    gulp.src("static-src/img/**/*")
         .pipe(changed("static/img"))
         .pipe(imagemin())
         // .pipe(gzip())
@@ -49,7 +49,7 @@ gulp.task("img", function () {
 // Hash SVG
 gulp.task("svg", function () {
     del(["static/svg/**/*"])
-    gulp.src("static/src/svg/**/*")
+    gulp.src("static-src/svg/**/*")
         .pipe(svgmin())
         // .pipe(hash())
         .pipe(gulp.dest("layouts/partials/svg"))
@@ -60,7 +60,7 @@ gulp.task("svg", function () {
 // Hash javascript
 gulp.task("js", function () {
     del(["static/js/**/*"])
-    gulp.src(["static/vendor/js/**/*", "static/src/js/**/*"])
+    gulp.src(["static/vendor/js/**/*", "static-src/js/**/*"])
         .pipe(concat('main.js'))
         .pipe(uglify())
         // .pipe(gzip())
@@ -72,10 +72,10 @@ gulp.task("js", function () {
 
 // Watch asset folder for changes
 gulp.task("watch", ["scss", "img", "svg", "js"], function () {
-    gulp.watch(["static/vendor/css/**/*", "static/src/scss/**/*"], ["scss"])
-    gulp.watch("static/src/img/**/*", ["img"])
-    gulp.watch("static/src/svg/**/*", ["svg"])
-    gulp.watch(["static/vendor/js/**/*", "static/src/js/**/*"], ["js"])
+    gulp.watch(["static/vendor/css/**/*", "static-src/scss/**/*"], ["scss"])
+    gulp.watch("static-src/img/**/*", ["img"])
+    gulp.watch("static-src/svg/**/*", ["svg"])
+    gulp.watch(["static/vendor/js/**/*", "static-src/js/**/*"], ["js"])
 })
 
 // Set watch as default task
