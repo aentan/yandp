@@ -1,2 +1,11 @@
-
 public/.gitattributes
+
+.DS_Store
+
+node_modules/
+public/
+
+data/**/hash.json
+static/css/*
+static/img/*
+static/js/*
