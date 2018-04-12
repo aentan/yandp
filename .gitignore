@@ -9,3 +9,4 @@ data/**/hash.json
 static/css/*
 static/img/*
 static/js/*
+.DS_Store
