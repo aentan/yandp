@@ -11,3 +11,6 @@ static/css/*
 static/img/*
 static/js/*
 .DS_Store
+public/.DS_Store
+static/.DS_Store
+static/src/.DS_Store

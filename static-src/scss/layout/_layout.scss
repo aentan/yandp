@@ -32,16 +32,50 @@ main > section {
   }
 }
 
+main {
+  overflow:                     hidden;
+
+  @include media(">desktop") {
+    overflow:                   visible;
+  }
+}
+
 // Hero
 .hero {
-    padding-top:                0;
+  padding-top:                  0;
 
-    @include grid-row;
+  @include grid-row;
 }
 
 // Title
 .title {
-    padding-bottom:             6.4rem;
+  padding-bottom:               6.4rem;
+  position:                     relative;
+}
+
+.hero-image {
+  position:                     absolute;
+  top:                          0;
+  right:                        -30.77%;
+
+  @include grid-col(20, 26);
+
+  @include media(">desktop") {
+    @include grid-col(10, 26);
+    @include grid-push(13, 26);
+
+    right:                      inherit;
+    top:                        -96px;
+  }
+
+  @include media(">hd") {
+    top:                        -128px;
+  }
+
+  svg {
+    width:                      100%;
+    height:                     auto;
+  }
 }
 
 // Summary
