@@ -1,55 +1,53 @@
-// Pill
-.pill {
-  @include type-callout();
+.cta {
+  display:                      inline-block;
+  color:                        $whisper;
+  background-color:             $yinmn;
+  padding:                      24px 32px;
+  text-decoration:              none;
 
-  display         : inline-block;
-
-  padding         : 7px 15px;
-
-  text-decoration : none;
-  border-radius   : 17.5px;
-
-  transition      : background-color .25s;
-}
-
-.pill-red {
-  background-color : $red;
-  color            : $white;
-
-  &:hover {
-    background-color : darken($red, 15%);
+  @include media(">desktop") {
+    padding:                    32px 48px;
   }
 }
 
-.pill-blue {
-  background-color : $blue;
-  color            : $white;
+.media-list {
+  @include grid-row;
+}
 
-  &:hover {
-    background-color : darken($blue, 15%);
+.media {
+  @include grid-row;
+
+  margin-bottom:                32px;
+
+  @include media(">desktop") {
+    @include grid-col(13,26);
+
+    margin-bottom:              64px;
   }
-}
 
-.pill-white {
-  background-color : $white;
-  color            : $gray-darker;
-}
+  .media-image {
+    width:                      100%;
+    margin-bottom:              16px;
 
-// Card
-.card {
-  background-color : $white;
-  color            : $gray-darker;
-  border           : $ui-border-width solid rgba($gray, 0.5);
-  border-radius    : $ui-border-radius;
-}
+    @include media(">tablet") {
+      @include grid-col(5, 12);
 
-// Swiper
-.swiper-pagination-bullet {
-  opacity          : .25;
-  background-color : $gray-darker;
-}
+      margin-bottom:            0;
+      height:                   200px;
+    }
 
-.swiper-pagination-bullet-active {
-  opacity          : 1;
-  background-color : $blue;
+    border:                     $ui-border-width solid $ui-border-color;
+    height:                     160px;
+    display:                    flex;
+    align-items:                center;
+    align-contents:             center;
+    justify-content:            center;
+  }
+
+  .media-body {
+    @include media(">tablet") {
+      @include grid-col(5, 12);
+      @include grid-push(1, 12);
+    }
+  }
 }

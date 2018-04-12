@@ -1,6 +1,6 @@
 baseURL: "https://youngandpowerful.sg/"
 languageCode: "en-us"
-title: "Young & Powerful Singapore"
+title: "Young & Powerful"
 permalinks:
   post: /:title/
 taxonomies:

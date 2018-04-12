@@ -5,7 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>{{ .Title }}</title>
+    <title>{{ .Title }} Singapore</title>
     <link rel="stylesheet" href="/css/{{ index .Site.Data.css.hash "main.css" }}" />
     {{ if .RSSLink }}
     <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
@@ -22,7 +22,7 @@
 
         <div class="title">
           <h1>National Poster Competition</h1>
-          <p>Deadline 24 August, 2018</p>
+          <p class="lead">Deadline 24 August, 2018</p>
         </div>
 
         <div class="summary">
@@ -32,37 +32,48 @@
         </div>
 
         <div class="hero-logos">
+          Logos
         </div>
 
       </section>
+
+      <hr>
 
       <section class="topics">
         <h2>Project Topics</h2>
         <p class="lead">Create posters based on the topics below.</p>
         <div class="media-list">
           <article class="media">
-            <img src="" alt="Equality image">
+            <div class="media-image">
+              {{ partial "svg/topic-equality.svg" . }}
+            </div>
             <div class="media-body">
               <h3>Equality</h3>
               <p>Examples for inspiration: Equal rights, celebrate diversity, end discrimination.</p>
             </div>
           </article>
           <article class="media">
-            <img src="" alt="Democracy image">
+            <div class="media-image">
+              {{ partial "svg/topic-democracy.svg" . }}
+            </div>
             <div class="media-body">
               <h3>Democracy</h3>
               <p>Examples for inspiration: </p>
             </div>
           </article>
           <article class="media">
-            <img src="" alt="Get active, stay healthy image">
+            <div class="media-image">
+              {{ partial "svg/topic-healthy.svg" . }}
+            </div>
             <div class="media-body">
               <h3>Get active, stay healthy</h3>
               <p>Examples for inspiration: Healthy eating, exercise and sports, the importance of mental health.</p>
             </div>
           </article>
           <article class="media">
-            <img src="" alt="Stay hopeful, be positive image">
+            <div class="media-image">
+              {{ partial "svg/topic-hopeful.svg" . }}
+            </div>
             <div class="media-body">
               <h3>Stay hopeful, be positive</h3>
               <p>Examples for inspiration: </p>
@@ -70,6 +81,8 @@
           </article>
         </div>
       </section>
+
+      <hr>
 
       <section class="dates">
         <h2>Key Dates</h2>
@@ -87,36 +100,48 @@
         </dl>
       </section>
 
+      <hr>
+
       <section class="format">
         <h2>Format</h2>
         <p class="lead">Create posters based on these specifications and rules.</p>
         <div class="media-list">
           <article class="media">
-            <img src="" alt="Equality image">
+            <div class="media-image">
+              {{ partial "svg/format-a3.svg" . }}
+            </div>
             <div class="media-body">
               <p>Posters must be A3 in size, landscape or portrait.</p>
             </div>
           </article>
           <article class="media">
-            <img src="" alt="Democracy image">
+            <div class="media-image">
+              {{ partial "svg/format-format.svg" . }}
+            </div>
             <div class="media-body">
               <p>Posters can be created by hand or digitally.</p>
             </div>
           </article>
           <article class="media">
-            <img src="" alt="Get active, stay healthy image">
+            <div class="media-image">
+              {{ partial "svg/format-limit.svg" . }}
+            </div>
             <div class="media-body">
               <p>No limit on the number of poster entries.</p>
             </div>
           </article>
           <article class="media">
-            <img src="" alt="Stay hopeful, be positive image">
+            <div class="media-image">
+              {{ partial "svg/format-group.svg" . }}
+            </div>
             <div class="media-body">
               <p>Submit your posters independently or as a group.</p>
             </div>
           </article>
         </div>
       </section>
+
+      <hr>
 
       <section class="submission">
         <h2>Submission</h2>
@@ -147,25 +172,29 @@
         </article>
       </section>
 
+      <hr>
+
       <section class="judging">
         <h2>Judging</h2>
-        <p>Independent panel of judges will review all entries and 60 selected ones – 20 under each age group.</p>
-        <p>The best entry in each age group will also win a cash prize of $1,000.</p>
+        <p class="lead">Independent panel of judges will review all entries and 60 selected ones – 20 under each age group.</p>
+        <p class="lead">The best entry in each age group will also win a cash prize of $1,000.</p>
         <article class="age-group">
           <div class="block">
-            <div class="block-label">12 &endash; 16</div>
+            <div class="block-label">12 &ndash; 16</div>
             <div class="block-caption">20 Winners</div>
           </div>
           <div class="block">
-            <div class="block-label">17 &endash; 20</div>
+            <div class="block-label">17 &ndash; 20</div>
             <div class="block-caption">20 Winners</div>
           </div>
           <div class="block">
-            <div class="block-label">21 &endash; 24</div>
+            <div class="block-label">21 &ndash; 24</div>
             <div class="block-caption">20 Winners</div>
           </div>
         </article>
       </section>
+
+      <hr>
 
       <section class="workshop">
         <h2>Workshop</h2>
@@ -212,9 +241,13 @@
         </ul>
       </section>
 
+      <hr>
+
       <section class="credits">
         <h2>Credits</h2>
       </section>
+
+      <hr>
 
     </main>
 
