@@ -15,7 +15,7 @@ body {
 body > header,
 main > section {
   margin:                       0 auto;
-  padding:                      12px;
+  padding:                      32px 12px;
   box-sizing:                   border-box;
 
   @include media(">tablet") {
@@ -90,6 +90,21 @@ main {
 
   @include media(">desktop") {
     @include grid-col(12, 26);
+  }
+}
+
+// Dates
+
+.dates {
+  @include grid-row;
+
+  .section-wrapper {
+    width:                      100%;
+
+    @include media(">desktop") {
+      @include grid-col(22,26);
+      @include grid-push(4, 26);
+    }
   }
 }
 

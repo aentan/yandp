@@ -1,3 +1,5 @@
+// CTA
+
 .cta {
   display:                      inline-block;
   color:                        $whisper;
@@ -9,6 +11,8 @@
     padding:                    32px 48px;
   }
 }
+
+// Media
 
 .media-list {
   @include grid-row;
@@ -48,6 +52,42 @@
     @include media(">tablet") {
       @include grid-col(5, 12);
       @include grid-push(1, 12);
+    }
+  }
+}
+
+// Dates List
+
+.date-list {
+  @include media(">tablet") {
+    @include grid-row;
+  }
+
+  dt, dd {
+    margin:                     0;
+
+    @include media(">tablet") {
+      padding:                  24px 0;
+    }
+  }
+
+  dt {
+    font-weight:                $type-weight-bold;
+    border-top:                 $ui-border-width solid $ui-border-color;
+    padding-top:                12px;
+
+    @include media(">tablet") {
+      @include grid-col(8, 22);
+    }
+  }
+
+  dd {
+    padding-bottom:             12px;
+
+    @include media(">tablet") {
+      border-top:                 $ui-border-width solid $ui-border-color;
+
+      @include grid-col(14, 22);
     }
   }
 }
