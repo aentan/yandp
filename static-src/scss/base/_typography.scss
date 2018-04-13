@@ -50,6 +50,13 @@ hr {
   border:                       0;
 }
 
+p svg {
+  @include media("<tablet") {
+    width:                  100%;
+    height:                     auto;
+  }
+}
+
 
 // Resources
 

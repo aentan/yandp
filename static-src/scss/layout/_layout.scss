@@ -108,6 +108,46 @@ main {
   }
 }
 
+// Submission
+
+.submission-option {
+  @include grid-row;
+
+  margin:                       24px 0;
+  padding:                      12px;
+  border:                       $ui-border-width solid $ui-border-color;
+
+  @include media(">desktop") {
+    margin:                     48px 0;
+    padding:                    48px 0;
+  }
+
+  .option-label {
+    @include type-lead();
+
+    @include media(">desktop") {
+      @include grid-col(6,26);
+
+      padding-left:             48px;
+    }
+  }
+
+  .option-body {
+    @include media(">desktop") {
+      @include grid-col(20,26);
+    }
+  }
+
+  .cta {
+    margin-bottom:              16px;
+
+    @include media(">desktop") {
+      margin-bottom:            0;
+      margin-right:             32px;
+    }
+  }
+}
+
 // Resources
 .resources {
   ul {
