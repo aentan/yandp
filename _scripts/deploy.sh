@@ -27,7 +27,7 @@ hugo
 
 echo "Updating gh-pages branch"
 cd public
-echo youngandpowerful.sg >> CNAME
+echo yandp.aenism.com >> CNAME
 git add --all
 git commit -m "Publishing to gh-pages (deploy.sh)"
 
