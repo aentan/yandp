@@ -13,6 +13,7 @@ body {
 
 // Main
 body > header,
+body > footer,
 main > section {
   margin:                       0 auto;
   padding:                      32px 12px;
@@ -102,13 +103,24 @@ main {
     width:                      100%;
 
     @include media(">desktop") {
-      @include grid-col(22,26);
-      @include grid-push(4, 26);
+      @include grid-col(20,26);
+      @include grid-push(6, 26);
     }
   }
 }
 
 // Submission
+
+.submission {
+  .section-wrapper {
+    width:                      100%;
+
+    @include media(">desktop") {
+      @include grid-col(20,26);
+      @include grid-push(6, 26);
+    }
+  }
+}
 
 .submission-option {
   @include grid-row;
@@ -148,6 +160,78 @@ main {
   }
 }
 
+// Judging
+
+.judging {
+  .section-wrapper {
+    width:                      100%;
+
+    @include media(">desktop") {
+      @include grid-col(20,26);
+    }
+  }
+}
+
+.age-group {
+  @include grid-row;
+
+  .block {
+    @include grid-col(12, 26);
+
+    position:                   relative;
+    text-align:                 center;
+    margin:                     16px 0;
+    padding:                    32px 0 16px;
+    border:                     $ui-border-width solid $ui-border-color;
+
+    @include media(">desktop") {
+      @include grid-col(8, 26);
+
+      padding:                  48px 0 24px;
+    }
+  }
+
+  .block:nth-child(2) {
+    @include grid-push(2, 26);
+  }
+
+  .block-label {
+    @include type-lead();
+
+    margin-bottom:              24px;
+
+    @include media(">desktop") {
+      margin-bottom:            32px;
+    }
+  }
+
+  .block:nth-child(1):after {
+    width:                      calc(16.67% + 4px);
+    content:                    "";
+    position:                   absolute;
+    background-color:           $ui-border-color;
+    height:                     $ui-border-width;
+    top:                        50%;
+    left:                       100%;
+
+    @include media(">desktop") {
+      width:                    calc(25% + 4px);
+    }
+  }
+}
+
+// Workshop
+
+.workshop {
+  .section-wrapper {
+    width:                      100%;
+
+    @include media(">desktop") {
+      @include grid-col(20,26);
+    }
+  }
+}
+
 // Resources
 .resources {
   ul {
@@ -162,4 +246,15 @@ main {
       @include grid-col(13, 26);
     }
   }
+}
+
+// Credits
+
+// Footer
+
+body > footer {
+  display:                      flex;
+  align-items:                  center;
+  align-contents:               center;
+  justify-content:              center;
 }

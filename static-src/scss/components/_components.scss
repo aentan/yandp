@@ -34,7 +34,7 @@
     margin-bottom:              16px;
 
     @include media(">tablet") {
-      @include grid-col(5, 12);
+      @include grid-col(5, 13);
 
       margin-bottom:            0;
       height:                   200px;
@@ -50,8 +50,8 @@
 
   .media-body {
     @include media(">tablet") {
-      @include grid-col(5, 12);
-      @include grid-push(1, 12);
+      @include grid-col(6, 13);
+      @include grid-push(1, 13);
     }
   }
 }
