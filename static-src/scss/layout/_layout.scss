@@ -19,17 +19,23 @@ main > section {
   padding:                      32px 12px;
   box-sizing:                   border-box;
 
-  @include media(">tablet") {
-    padding:                    48px;
-  }
-
   @include media(">desktop") {
-    padding:                    80px 0;
+    padding:                    64px 0;
     max-width:                  960px;
   }
 
   @include media(">hd") {
+    padding:                    80px 0;
     max-width:                  1280px;
+  }
+}
+
+body > header {
+  @include media(">desktop") {
+    padding:                    32px 0;
+  }
+  @include media(">hd") {
+    padding:                    64px 0;
   }
 }
 
@@ -50,8 +56,18 @@ main {
 
 // Title
 .title {
-  padding-bottom:               6.4rem;
+  padding-bottom:               48px;
   position:                     relative;
+
+  h1 {
+    @include media(">desktop") {
+      margin-bottom:            112px;
+    }
+
+    @include media(">hd") {
+      margin-bottom:            128px;
+    }
+  }
 }
 
 .hero-image {
@@ -63,14 +79,17 @@ main {
 
   @include media(">desktop") {
     @include grid-col(10, 26);
-    @include grid-push(13, 26);
+    @include grid-push(14, 26);
 
     right:                      inherit;
-    top:                        -96px;
+    top:                        -64px;
   }
 
   @include media(">hd") {
-    top:                        -128px;
+    @include grid-col(9, 26);
+    @include grid-push(13, 26);
+
+    top:                        -112px;
   }
 
   svg {
