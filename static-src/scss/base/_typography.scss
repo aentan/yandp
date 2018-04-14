@@ -1,10 +1,11 @@
 html {
-  font-size : 62.5%;
+  font-size:                    62.5%;
 }
 
 body {
   @include type-body();
-  color : $yinmn;
+
+  color:                        $yinmn;
 }
 
 h1 {
@@ -36,8 +37,8 @@ p {
 }
 
 a {
-  color           : $yinmn;
-  text-decoration : underline;
+  color:                        $yinmn;
+  text-decoration:              underline;
 }
 
 hr {
@@ -52,7 +53,7 @@ hr {
 
 p svg {
   @include media("<tablet") {
-    width:                  100%;
+    width:                      100%;
     height:                     auto;
   }
 }

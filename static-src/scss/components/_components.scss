@@ -4,11 +4,12 @@
   display:                      inline-block;
   color:                        $whisper;
   background-color:             $yinmn;
-  padding:                      24px 32px;
-  text-decoration:              none;
+  padding:                      16px 24px;
+
+  @include type-cta;
 
   @include media(">desktop") {
-    padding:                    32px 48px;
+    padding:                    24px 32px;
   }
 }
 

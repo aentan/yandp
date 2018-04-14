@@ -35,70 +35,71 @@
 }
 
 @mixin type-h2() {
-  font-family    : $type-heading-family;
-  font-size      : $type-h2-size;
-  font-weight    : $type-h2-weight;
-  letter-spacing : $type-h2-letter-spacing;
-  line-height    : $type-h2-line-height;
-  margin  : $type-h2-margin;
-  text-transform : uppercase;
+  font-family:                  $type-heading-family;
+  font-size:                    $type-h2-size;
+  font-weight:                  $type-h2-weight;
+  letter-spacing:               $type-h2-letter-spacing;
+  line-height:                  $type-h2-line-height;
+  margin:                       $type-h2-margin;
+  text-transform:               uppercase;
 }
 
 @mixin type-h3() {
-  font-family    : $type-heading-family;
-  font-size      : $type-h3-size;
-  font-weight    : $type-h3-weight;
-  letter-spacing : $type-h3-letter-spacing;
-  line-height    : $type-h3-line-height;
-  margin  : $type-h3-margin;
-  text-transform : uppercase;
+  font-family:                  $type-heading-family;
+  font-size:                    $type-h3-size;
+  font-weight:                  $type-h3-weight;
+  letter-spacing:               $type-h3-letter-spacing;
+  line-height:                  $type-h3-line-height;
+  margin:                       $type-h3-margin;
+  text-transform:               uppercase;
 }
 
 @mixin type-lead() {
-  font-family    : $type-base-family;
-  font-size      : $type-lead-size;
-  font-weight    : $type-lead-weight;
-  letter-spacing : $type-lead-letter-spacing;
-  line-height    : $type-lead-line-height;
-  margin  : $type-lead-margin;
+  font-family:                  $type-base-family;
+  font-size:                    $type-lead-size;
+  font-weight:                  $type-lead-weight;
+  letter-spacing:               $type-lead-letter-spacing;
+  line-height:                  $type-lead-line-height;
+  margin:                       $type-lead-margin;
 }
 
 @mixin type-body() {
-  font-family    : $type-base-family;
-  font-size      : $type-body-size;
-  font-weight    : $type-body-weight;
-  letter-spacing : $type-body-letter-spacing;
-  line-height    : $type-body-line-height;
-  margin  : $type-body-margin;
+  font-family:                  $type-base-family;
+  font-size:                    $type-body-size;
+  font-weight:                  $type-body-weight;
+  letter-spacing:               $type-body-letter-spacing;
+  line-height:                  $type-body-line-height;
+  margin:                       $type-body-margin;
 }
 
 @mixin type-cta() {
-  font-family    : $type-heading-family;
-  font-size      : $type-cta-size;
-  font-weight    : $type-cta-weight;
-  letter-spacing : $type-cta-letter-spacing;
-  line-height    : $type-cta-line-height;
-  margin  : $type-cta-margin;
-  text-transform : uppercase;
+  font-family:                  $type-heading-family;
+  font-size:                    $type-cta-size;
+  font-weight:                  $type-cta-weight;
+  letter-spacing:               $type-cta-letter-spacing;
+  line-height:                  $type-cta-line-height;
+  margin:                       $type-cta-margin;
+  text-transform:               uppercase;
+  text-decoration:              none;
 }
 
 
 // Grid
 
 @mixin grid-row {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  box-sizing: border-box;
-  flex-wrap: wrap;
+  display:                      flex;
+  flex-direction:               row;
+  width:                        100%;
+  box-sizing:                   border-box;
+  flex-wrap:                    wrap;
 }
 
 @mixin grid-col($col, $sum) {
-  width: decimal-floor(percentage($col/$sum));
-  box-sizing: border-box;
-  vertical-align: top;
+  width:                        decimal-floor(percentage($col/$sum));
+  box-sizing:                   border-box;
+  vertical-align:               top;
 }
 
 @mixin grid-push($col, $sum) {
-  margin-left: decimal-floor(percentage($col/$sum));
+  margin-left:                  decimal-floor(percentage($col/$sum));
 }
