@@ -107,9 +107,18 @@ main {
 
 .hero-logos {
   text-align:                   center;
+  display:                      flex;
+  justify-content:              space-evenly;
+  align-items:                  center;
+  align-content:                flex-start;
+  flex-wrap:                    wrap;
 
   @include media(">desktop") {
     @include grid-col(12, 26);
+  }
+
+  svg {
+    margin:                     24px 32px;
   }
 }
 
