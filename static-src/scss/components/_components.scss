@@ -75,15 +75,19 @@
   dt {
     font-weight:                $type-weight-bold;
     border-top:                 $ui-border-width solid $ui-border-color;
-    padding-top:                12px;
 
+    @include media("<tablet") {
+      padding-top:              12px;
+    }
     @include media(">tablet") {
       @include grid-col(8, 22);
     }
   }
 
   dd {
-    padding-bottom:             12px;
+    @include media("<tablet") {
+      padding-bottom:           12px;
+    }
 
     @include media(">tablet") {
       border-top:                 $ui-border-width solid $ui-border-color;
