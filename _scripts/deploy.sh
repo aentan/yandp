@@ -1,35 +1,22 @@
-#!/bin/sh
+#!/bin/bash
+set -e
 
-DIR=$(dirname "$0")
+# Run this in your Hugo blog repo directory
 
-cd $DIR/..
+# These are mine. They won't work for you :)
+DISTRIBUTION_ID=E26RWIBAFNRGCR
+BUCKET_NAME=youngandpowerful.sg
+PROFILE=lauf # or `default` if you don't use profiles
 
-if [[ $(git status -s) ]]
-then
-    echo "The working directory is dirty. Please commit any pending changes."
-    exit 1;
-fi
+hugo -v
 
-echo "Deleting old publication"
-rm -rf public
-mkdir public
-git worktree prune
-rm -rf .git/worktrees/public/
+# Copy over pages - not static js/img/css/downloads
+aws s3 sync --acl "public-read" --sse "AES256" public/ s3://$BUCKET_NAME
 
-echo "Checking out gh-pages branch into public"
-git worktree add -B gh-pages public origin/gh-pages
+# Ensure static files are set to cache forever - cache for a month --cache-control "max-age=2592000"
+aws s3 sync --profile ${PROFILE} --cache-control "max-age=2592000" --acl "public-read" --sse "AES256" public/img/ s3://${BUCKET_NAME}/img/
+aws s3 sync --profile ${PROFILE} --cache-control "max-age=2592000" --acl "public-read" --sse "AES256" public/css/ s3://${BUCKET_NAME}/css/
+aws s3 sync --profile ${PROFILE} --cache-control "max-age=2592000" --acl "public-read" --sse "AES256" public/js/ s3://${BUCKET_NAME}/js/
 
-echo "Removing existing files"
-rm -rf public/*
-
-echo "Generating site"
-hugo
-
-echo "Updating gh-pages branch"
-cd public
-echo yandp.aenism.com >> CNAME
-git add --all
-git commit -m "Publishing to gh-pages (deploy.sh)"
-
-git push origin gh-pages
-cd ..
+# Invalidate landing page so everything sees new post - warning, first 1K/mo free, then 1/2 cent each
+aws cloudfront create-invalidation --profile ${PROFILE} --distribution-id ${DISTRIBUTION_ID} --paths /index.html /
