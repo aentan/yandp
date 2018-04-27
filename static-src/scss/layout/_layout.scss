@@ -8,6 +8,7 @@ body {
 
 body {
   margin:                       0;
+  padding-bottom:               48px;
   background-color:             $whisper;
 }
 
@@ -288,7 +289,57 @@ main {
 
 // Footer
 
+.menu {
+  position:                     fixed;
+  bottom:                       0;
+  left:                         0;
+  width:                        100%;
+  height:                       48px;
+  background-color:             $whisper;
+  border-top:                   $ui-border-width solid $ui-border-color;
+  overflow:                     auto;
+  -webkit-overflow-scrolling:   touch;
+  -ms-overflow-style:           -ms-autohiding-scrollbar;
+
+  @include type-lead();
+  margin:                       0;
+
+  @include media(">desktop") {
+    height:                     64px;
+  }
+
+  ul {
+    list-style:                 none;
+    margin:                     0;
+    padding:                    0 8px;
+    display:                    flex;
+    flex-wrap:                  nowrap;
+    align-items:              center;
+    justify-content:            flex-start;
+    align-content:              center;
+
+    @include media(">desktop") {
+      justify-content:          space-evenly;
+    }
+  }
+
+  li {
+    flex:                       0 0 auto;
+  }
+
+  a {
+    display:                    inline-block;
+    padding:                    8px 16px;
+    text-decoration:            none;
+
+    @include media(">desktop") {
+      padding:                  16px;
+    }
+  }
+}
+
 body > footer {
+  padding-bottom:               96px;
   display:                      flex;
   align-items:                  center;
   align-contents:               center;
