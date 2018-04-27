@@ -10,6 +10,8 @@ PROFILE=default # or `default` if you don't use profiles
 
 hugo -v
 
+# Empty bucket
+aws s3 rm s3://bucket-name --recursive
 # Copy over pages
 aws s3 sync --acl "public-read" --sse "AES256" public/ s3://$BUCKET_NAME/ --exclude '.git' --exclude '.gitattributes' --exclude '.DS_Store' --exclude 'CNAME'
 
