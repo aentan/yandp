@@ -11,6 +11,10 @@
   @include media(">desktop") {
     padding:                    24px 32px;
   }
+
+  &.disabled {
+    opacity:                    0.5;
+  }
 }
 
 // Media
