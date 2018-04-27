@@ -11,7 +11,7 @@ PROFILE=default # or `default` if you don't use profiles
 hugo -v
 
 # Copy over pages
-aws s3 sync --acl "public-read" --sse "AES256" public/ s3://$BUCKET_NAME
+aws s3 sync --acl "public-read" --sse "AES256" public/ s3://$BUCKET_NAME/ --exclude '.git' --exclude '.gitattributes' --exclude 'CNAME'
 
 # Ensure static files are set to cache forever - cache for a month --cache-control "max-age=2592000"
 aws s3 sync --profile ${PROFILE} --cache-control "max-age=2592000" --acl "public-read" --sse "AES256" public/img/ s3://${BUCKET_NAME}/img/
